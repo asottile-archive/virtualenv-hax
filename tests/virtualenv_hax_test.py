@@ -29,9 +29,16 @@ def strategy_python_dash_m(venv1_dir, venv2_dir):
     ))
 
 
+def strategy_executable(venv1_dir, venv2_dir):
+    subprocess.check_call((
+        venv1_dir.join('bin/virtualenv-hax').strpath,
+        '-ppython3.4',
+        venv2_dir.strpath,
+    ))
+
+
 @pytest.mark.parametrize(
-    'strat',
-    (strategy_python_dash_m,)
+    'strat', (strategy_python_dash_m, strategy_executable)
 )
 def test_py27_with_future_installed_installing_python3_venv(tmpdir, strat):
     venv1_dir = tmpdir.join('venv27')
