@@ -10,7 +10,10 @@ import virtualenv
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description=(
+        'A wrapper around virtualenv that avoids sys.path sadness. '
+        'Any additional arguments are passed directly to `virtualenv`.'
+    ))
     parser.add_argument('-p', '--python', default=sys.executable)
     args, rest_argv = parser.parse_known_args(argv)
 
