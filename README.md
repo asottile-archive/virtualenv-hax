@@ -5,3 +5,6 @@ virtualenv-hax
 ==============
 
 A wrapper around virtualenv that avoids https://github.com/PythonCharmers/python-future/issues/148
+
+
+*Note: this is unnecessary with virtualenv>=15*
